@@ -25,7 +25,6 @@ public class Main {
                     urlDownloader.openFile(fileDir);
                 }
             }
-
         } else {
             System.out.println("Первым аргументом командной строки должен быть задан url сайта");
             throw new Exception("Неверные входные параметры");
