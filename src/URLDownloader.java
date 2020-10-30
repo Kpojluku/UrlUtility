@@ -223,7 +223,7 @@ public class URLDownloader {
     }
 
     public boolean isHtml(String file) {
-        return file.startsWith("<!DOCTYPE html>") || file.startsWith("<!doctype html>");
+        return file.startsWith("<!DOCTYPE html") || file.startsWith("<!doctype html");
     }
 
     // Требование 2.2
