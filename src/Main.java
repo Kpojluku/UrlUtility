@@ -2,22 +2,22 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         if (args.length > 0) {
-            String domainName = args[0];
+            String url = args[0];
 
             URLDownloader urlDownloader = new URLDownloader();
 
-            String FileName = urlDownloader.getFileName(domainName);
+            String FileName = urlDownloader.getFileName(url);
             String fileDir;
             String htmlFile;
             if (args.length > 1) {
-                fileDir = urlDownloader.saveSite(args[1], domainName);
+                fileDir = urlDownloader.saveSite(args[1], url);
             } else {
-                fileDir = urlDownloader.saveSiteDefault(FileName, domainName);
+                fileDir = urlDownloader.saveSiteDefault(FileName, url);
             }
             if (fileDir != null) {
                 htmlFile = urlDownloader.readFile(fileDir);
 
-                if (urlDownloader.isHtml(htmlFile)) {
+                if (urlDownloader.isHtml(url)) {
                     String newHtmlFile = urlDownloader.htmlParse(htmlFile, fileDir);
                     urlDownloader.saveNewHtmlFile(newHtmlFile, fileDir);
                 }

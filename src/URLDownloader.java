@@ -222,8 +222,17 @@ public class URLDownloader {
         }
     }
 
-    public boolean isHtml(String file) {
-        return file.startsWith("<!DOCTYPE html") || file.startsWith("<!doctype html");
+    public boolean isHtml(String siteAddress) {
+        boolean check = false;
+        try {
+            URL url = new URL(siteAddress);
+            URLConnection con = url.openConnection();
+            String contentType = con.getContentType();
+            check = contentType.contains("html");
+        } catch (IOException ignored) {
+        }
+        return check;
+        //   return file.startsWith("<!DOCTYPE html") || file.startsWith("<!doctype html");
     }
 
     // Требование 2.2
