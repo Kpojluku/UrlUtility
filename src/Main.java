@@ -27,7 +27,7 @@ public class Main {
             }
         } else {
             System.out.println("Первым аргументом командной строки должен быть задан url сайта");
-            throw new Exception("Неверные входные параметры");
+            throw new IllegalArgumentException("Неверные входные параметры");
         }
     }
 }
