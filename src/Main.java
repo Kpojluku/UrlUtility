@@ -1,5 +1,5 @@
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IllegalArgumentException {
 
         if (args.length > 0) {
             String url = args[0];
